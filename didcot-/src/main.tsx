@@ -1,4 +1,4 @@
-import { MainLayout } from 'components';
+import { MainLayout, SectionContainer } from 'components';
 import { AboutSection, FormSection, IntroSection } from 'sections';
 import { SectionIdEnum } from 'types';
 
@@ -20,8 +20,12 @@ const sections = [
 export const Main: React.FC = () => {
   return (
     <MainLayout>
-      {sections.map(({ component }) => {
-        return component;
+      {sections.map(({ component, sectionId }) => {
+        return (
+          <SectionContainer sectionId={sectionId} key={sectionId}>
+            {component}
+          </SectionContainer>
+        );
       })}
     </MainLayout>
   );
