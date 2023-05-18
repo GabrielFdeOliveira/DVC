@@ -1,3 +1,4 @@
+import { Divider } from '@mui/material';
 import { MainLayout, SectionContainer } from 'components';
 import { AboutSection, FormSection, IntroSection } from 'sections';
 import { SectionIdEnum } from 'types';
@@ -23,6 +24,7 @@ export const Main: React.FC = () => {
       {sections.map(({ component, sectionId }) => {
         return (
           <SectionContainer sectionId={sectionId} key={sectionId}>
+            <Divider />
             {component}
           </SectionContainer>
         );
